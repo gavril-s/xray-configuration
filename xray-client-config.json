@@ -1,0 +1,44 @@
+{
+    "log": {
+        "loglevel": "warning"
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 1080,
+            "protocol": "socks",
+            "settings": {
+                "udp": true
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "YOUR-VPS-IP",
+                        "port": 8443,
+                        "users": [
+                            {
+                                "id": "USER-ID-2",
+                                "flow": "xtls-rprx-vision",
+                                "encryption": "none"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "security": "reality",
+                "realitySettings": {
+                    "serverName": "www.apple.com",
+                    "publicKey": "YOUR-PUBLIC-KEY",
+                    "shortId": "abcd1234"
+                }
+            }
+        }
+    ]
+}

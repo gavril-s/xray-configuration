@@ -1,0 +1,10 @@
+# Enabling/disabling proxy from the terminal
+alias useproxy="export ALL_PROXY=socks5h://127.0.0.1:1080 && export HTTPS_PROXY=localhost:1080 && export HTTP_PROXY=localhost:1080"
+alias dropproxy="export ALL_PROXY= && export HTTPS_PROXY= && export HTTP_PROXY="
+
+# XRay
+alias startproxy="xray run -c ~/xray-config.json"
+
+# SSH-proxy
+alias startproxyssh="autossh -M 0 -f -N -D 1080 YOUR-VPS-USER@YOUR-VPS-IP"
+alias stopproxyssh="pkill autossh"
